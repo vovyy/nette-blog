@@ -1,9 +1,4 @@
-<IfModule mod_rewrite.c>
 RewriteEngine On
-
-RewriteRule ^$ www/ [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !^/www/
-RewriteRule ^(.*)$ www/$1
-</IfModule>
+RewriteRule !\.(pdf|js|ico|gif|jpg|png|css|rar|zip|tar\.gz)$ index.php [L]

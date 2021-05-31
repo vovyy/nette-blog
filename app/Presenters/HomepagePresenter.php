@@ -16,22 +16,18 @@ class HomepagePresenter extends Nette\Application\UI\Presenter
         $this->database = $database;
     }
 
-
     public function actionGetArticles($articles): void
     {
         $return = [];
 
         foreach ($articles as $article) {
-            $return[] = [
+            $return = [
                 'id' => $article->id,
                 'title' => $article->title,
                 'content' => $article->content
             ];
         }
-    }
-    public function renderDefault($return): void
-    {
-        $arr = array(1, 2, 3, 4);
         $this->sendJson($return);
     }
+    
 }
